@@ -14,7 +14,7 @@ public class CreateMatch : MonoBehaviour
         Debug.Log("creating match");
 
         NetWorker server;
-        server = new UDPServer(64);
+        server = new UDPServer(4);
 
         ((UDPServer) server).Connect(port: 15937, natHost: Constants.MasterServerIP,
             natPort: (ushort) Constants.MasterServerNatPort);

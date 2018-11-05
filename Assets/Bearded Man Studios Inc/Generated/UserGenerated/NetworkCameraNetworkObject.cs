@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace BeardedManStudios.Forge.Networking.Generated
 {
-	[GeneratedInterpol("{\"inter\":[0.15]")]
+	[GeneratedInterpol("{\"inter\":[0.5]")]
 	public partial class NetworkCameraNetworkObject : NetworkObject
 	{
 		public const int IDENTITY = 4;
@@ -17,7 +17,7 @@ namespace BeardedManStudios.Forge.Networking.Generated
 		#pragma warning restore 0067
 		private Vector3 _position;
 		public event FieldEvent<Vector3> positionChanged;
-		public InterpolateVector3 positionInterpolation = new InterpolateVector3() { LerpT = 0.15f, Enabled = true };
+		public InterpolateVector3 positionInterpolation = new InterpolateVector3() { LerpT = 0.5f, Enabled = true };
 		public Vector3 position
 		{
 			get { return _position; }
@@ -82,6 +82,10 @@ namespace BeardedManStudios.Forge.Networking.Generated
 			if ((0x1 & _dirtyFields[0]) != 0)
 				UnityObjectMapper.Instance.MapBytes(dirtyFieldsData, _position);
 
+			// Reset all the dirty fields
+			for (int i = 0; i < _dirtyFields.Length; i++)
+				_dirtyFields[i] = 0;
+
 			return dirtyFieldsData;
 		}
 
@@ -116,7 +120,7 @@ namespace BeardedManStudios.Forge.Networking.Generated
 			if (positionInterpolation.Enabled && !positionInterpolation.current.UnityNear(positionInterpolation.target, 0.0015f))
 			{
 				_position = (Vector3)positionInterpolation.Interpolate();
-				RunChange_position(positionInterpolation.Timestep);
+				//RunChange_position(positionInterpolation.Timestep);
 			}
 		}
 

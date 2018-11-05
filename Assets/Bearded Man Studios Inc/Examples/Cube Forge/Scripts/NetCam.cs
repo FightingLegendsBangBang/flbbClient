@@ -23,7 +23,7 @@ public class NetCam : NetworkCameraBehavior
 		base.NetworkStart();
 
 		cameraRef = GetComponent<Camera>();
-		networkObject.UpdateInterval = 16;
+		networkObject.UpdateInterval = 10;
 		Debug.Log(networkObject.UpdateInterval);
 		// If this is not our camera then we should not render using it
 		if (!networkObject.IsOwner)

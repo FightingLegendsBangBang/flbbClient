@@ -51,6 +51,8 @@ public class CubeForgeGame : CubeForgeGameBehavior
     /// </summary>
     public double RoundTripLatency { get; private set; }
 
+    float deltaTime = 0.0f;
+
     private NetworkCameraNetworkObject netCam;
 
     private void Awake()
@@ -136,6 +138,9 @@ public class CubeForgeGame : CubeForgeGameBehavior
 
     private void Update()
     {
+        deltaTime += (Time.unscaledDeltaTime - deltaTime) * 0.1f;
+
+        
         // Pretty useless at the moment as the only primitive supported is a cube
         // will add a sphere or something later
         if (Input.GetKeyDown(KeyCode.Alpha0))
@@ -155,6 +160,7 @@ public class CubeForgeGame : CubeForgeGameBehavior
         //	Cleanup();
         //	SceneManager.LoadScene(1);
         //}
+
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -206,10 +212,15 @@ public class CubeForgeGame : CubeForgeGameBehavior
         else
             WriteLabel(new Rect(14, 14, 100, 25), "Players: " + playerCount);
 
-        WriteLabel(new Rect(14, 28, 100, 25), "Time: " + NetworkManager.Instance.Networker.Time.Timestep);
-        WriteLabel(new Rect(14, 42, 256, 25), "Bandwidth In: " + NetworkManager.Instance.Networker.BandwidthIn);
-        WriteLabel(new Rect(14, 56, 256, 25), "Bandwidth Out: " + NetworkManager.Instance.Networker.BandwidthOut);
-        WriteLabel(new Rect(14, 70, 256, 25), "Round Trip Latency (ms): " + RoundTripLatency);
+        float msec = deltaTime * 1000.0f;
+        float fps = 1.0f / deltaTime;
+
+
+        WriteLabel(new Rect(14, 28, 256, 25), string.Format("{0:0.0} ms ({1:0.} fps)", msec, fps));
+        WriteLabel(new Rect(14, 42, 100, 25), "Time: " + NetworkManager.Instance.Networker.Time.Timestep);
+        WriteLabel(new Rect(14, 56, 256, 25), "Bandwidth In: " + NetworkManager.Instance.Networker.BandwidthIn);
+        WriteLabel(new Rect(14, 70, 256, 25), "Bandwidth Out: " + NetworkManager.Instance.Networker.BandwidthOut);
+        WriteLabel(new Rect(14, 84, 256, 25), "Round Trip Latency (ms): " + RoundTripLatency);
     }
 
     /// <summary>
