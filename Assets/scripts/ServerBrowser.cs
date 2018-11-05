@@ -21,10 +21,10 @@ public class ServerBrowser : MonoBehaviour
     public GameObject serverListingObject;
 
 
-
     void Start()
     {
         Rpc.MainThreadRunner = MainThreadManager.Instance;
+        NetWorker.localServerLocated += LocalServerLocated;
         RefreshClick();
     }
 
@@ -71,17 +71,6 @@ public class ServerBrowser : MonoBehaviour
                     // Go through all of the available hosts and add them to the server browser
                     foreach (MasterServerResponse.Server server in response.serverResponse)
                     {
-                        /*
-                        Debug.Log("Name: " + server.Name);
-                        Debug.Log("Address: " + server.Address);
-                        Debug.Log("Port: " + server.Port);
-                        Debug.Log("Comment: " + server.Comment);
-                        Debug.Log("Type: " + server.Type);
-                        Debug.Log("Mode: " + server.Mode);
-                        Debug.Log("Players: " + server.PlayerCount);
-                        Debug.Log("Max Players: " + server.MaxPlayers);
-                        Debug.Log("Protocol: " + server.Protocol);
-                        */
                         CreateServerListing(server.Name, server.Comment, server.PlayerCount,
                             server.MaxPlayers, server.Address, server.Port);
                     }
@@ -117,6 +106,7 @@ public class ServerBrowser : MonoBehaviour
     public void LocalServerLocated(NetWorker.BroadcastEndpoints endpoint, NetWorker sender)
     {
         Debug.Log("Found endpoint: " + endpoint.Address + ":" + endpoint.Port + "/");
+
         CreateServerListing(endpoint.Address, "local", 1, 2, endpoint.Address, endpoint.Port);
     }
 
@@ -129,9 +119,8 @@ public class ServerBrowser : MonoBehaviour
         client.textMessageReceived += RecieveMatchData;
         client.Connect(masterServerHost, (ushort) masterServerPort);
         NetWorker.RefreshLocalUdpListings();
-        NetWorker.localServerLocated += LocalServerLocated;
     }
-    
+
     private void OnApplicationQuit()
     {
         if (client != null)

@@ -28,6 +28,8 @@ namespace DefaultNamespace
 
             this.serverAdres = serverAdres;
             this.serverPort = serverPort;
+
+            gameObject.name = serverAdres;
         }
 
         public void ClickEvent()
