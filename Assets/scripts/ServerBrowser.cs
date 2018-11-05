@@ -23,6 +23,8 @@ public class ServerBrowser : MonoBehaviour
 
     void Start()
     {
+        NetWorker.PingForFirewall(15937);
+
         Rpc.MainThreadRunner = MainThreadManager.Instance;
         NetWorker.localServerLocated += LocalServerLocated;
         RefreshClick();
