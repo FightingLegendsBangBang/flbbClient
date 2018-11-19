@@ -48,7 +48,7 @@ public class NetworkManager : MonoBehaviour
     {
         if (playersToCreate.Count > 0)
         {
-            for (int i = playersToCreate.Count - 1; i >= 0; i--)
+            for (int i = 0; i < playersToCreate.Count; i++)
             {
                 var pl = playersToCreate[i];
                 var pobj = Instantiate(pl.Item2, pl.Item3, pl.Item4);
@@ -57,21 +57,17 @@ public class NetworkManager : MonoBehaviour
                 pc.Init(pl.Item1);
 
                 Players[pl.Item1].playerController = pc;
-                playersToCreate.Remove(pl);
             }
+            
+            playersToCreate.Clear();
         }
         if (playersToDestroy.Count > 0)
         {
             Debug.Log("test");
             for (int i = 0; i < playersToDestroy.Count; i++)
             {
-                Debug.Log("destroying");
-                Debug.Log(Players[playersToDestroy[i]]);
-                Debug.Log(Players[playersToDestroy[i]].playerController);
-                Debug.Log(Players[playersToDestroy[i]].playerController.gameObject);
                 Destroy(Players[playersToDestroy[i]].playerController.gameObject);
                 Players.Remove(playersToDestroy[i]);
-                playersToDestroy.Remove(playersToDestroy[i]);
             }
 
             playersToDestroy.Clear();

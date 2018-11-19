@@ -13,6 +13,7 @@ namespace DefaultNamespace
         public bool isHost;
         public string playerName;
         public Vector3 position;
+        public Vector3 oldPosition;
 
         public PlayerData(int playerId, bool isHost, string playerName,
             Vector3 position)
