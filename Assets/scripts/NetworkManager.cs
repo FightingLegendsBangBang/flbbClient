@@ -58,9 +58,10 @@ public class NetworkManager : MonoBehaviour
 
                 Players[pl.Item1].playerController = pc;
             }
-            
+
             playersToCreate.Clear();
         }
+
         if (playersToDestroy.Count > 0)
         {
             Debug.Log("test");
@@ -90,12 +91,16 @@ public class NetworkManager : MonoBehaviour
             {
                 if (Players[myId] != null)
                 {
-                    
-                    Players[myId].WritePlayerData(writer);
-                    client?.FirstPeer?.Send(writer, DeliveryMethod.Unreliable);
-                    writer.Reset();
+                    if (Players[myId].position != Players[myId].oldPosition)
+                    {
+                        Players[myId].WritePlayerData(writer);
+                        client?.FirstPeer?.Send(writer, DeliveryMethod.Unreliable);
+                        writer.Reset();
+                        Players[myId].oldPosition = Players[myId].position;
+                    }
                 }
             }
+
             client.PollEvents();
             Thread.Sleep(16);
         }
@@ -118,7 +123,7 @@ public class NetworkManager : MonoBehaviour
                 myId = mid;
 
 
-                InitPlayer(mid, pName, isHost);
+                InitPlayer(mid, pName, isHost, Vector3.zero);
 
 
                 writer.Put((ushort) 1);
@@ -134,8 +139,11 @@ public class NetworkManager : MonoBehaviour
                 var npid = reader.GetInt();
                 var npName = reader.GetString();
                 var nIsHost = reader.GetBool();
-
-                InitPlayer(npid, npName, nIsHost);
+                var posx = reader.GetFloat();
+                var posy = reader.GetFloat();
+                var posz = reader.GetFloat();
+                var pos = new Vector3(posx, posy, posz);
+                InitPlayer(npid, npName, nIsHost, pos);
 
                 break;
             case 3: //remove disconnected player
@@ -156,9 +164,9 @@ public class NetworkManager : MonoBehaviour
         reader.Recycle();
     }
 
-    private void InitPlayer(int pid, string pName, bool isHost)
+    private void InitPlayer(int pid, string pName, bool isHost, Vector3 position)
     {
-        var p = new PlayerData(pid, isHost, pName, Vector3.zero);
+        var p = new PlayerData(pid, isHost, pName, position);
         p.CreatePlayerObject(playerPrefab);
         Players.Add(pid, p);
     }
