@@ -6,9 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MultiPlayerMenu.unity
-    guid: 40eef4fc07310328cb95b0942eed6a09
-  - enabled: 1
-    path: Assets/Bearded Man Studios Inc/Examples/Cube Forge/CubeForgeGame.unity
-    guid: 4ef136a7071399248bad683d402a0e39
+    path: Assets/Scenes/TestScene.unity
+    guid: 7a1497a53ff042af48a6d3c7cfe4f862
   m_configObjects: {}

@@ -1,7 +1,249 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9527edb4-369e-4137-a94f-90b434324bdb" name="Default Changelist" comment="" />
+    <list default="true" id="9527edb4-369e-4137-a94f-90b434324bdb" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.FightingLegendsBangBangV3/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FightingLegendsBangBangV3/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.FightingLegendsBangBangV3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FightingLegendsBangBangV3/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Api Documentation HTML.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Api Documentation HTML.zip.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Editor.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Editor/ForgeNetworkingUnityEditor.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Editor/ForgeNetworkingUnityEditor.dll.mdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Editor/ForgeNetworkingUnityEditor.dll.mdb.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Editor/ForgeNetworkingUnityEditor.dll.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Editor/Resources.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Editor/Resources/Add.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Editor/Resources/Add.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Editor/Resources/Arrow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Editor/Resources/Arrow.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Editor/Resources/BMS_Forge_Editor.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Editor/Resources/BMS_Forge_Editor/NetworkBehaviorTemplate.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Editor/Resources/BMS_Forge_Editor/NetworkBehaviorTemplate.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Editor/Resources/BMS_Forge_Editor/NetworkManagerTemplate.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Editor/Resources/BMS_Forge_Editor/NetworkManagerTemplate.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Editor/Resources/BMS_Forge_Editor/NetworkObjectFactoryTemplate.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Editor/Resources/BMS_Forge_Editor/NetworkObjectFactoryTemplate.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Editor/Resources/BMS_Forge_Editor/NetworkObjectTemplate.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Editor/Resources/BMS_Forge_Editor/NetworkObjectTemplate.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Editor/Resources/BMS_Forge_Editor/StandAloneNetworkBehaviorTemplate.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Editor/Resources/BMS_Forge_Editor/StandAloneNetworkBehaviorTemplate.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Editor/Resources/BMS_Forge_Editor/version.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Editor/Resources/BMS_Forge_Editor/version.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Editor/Resources/Icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Editor/Resources/Icon.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Editor/Resources/Lightbulb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Editor/Resources/Lightbulb.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Editor/Resources/Save.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Editor/Resources/Save.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Editor/Resources/SideArrow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Editor/Resources/SideArrow.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Editor/Resources/Star.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Editor/Resources/Star.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Editor/Resources/Subtract.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Editor/Resources/Subtract.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Editor/Resources/Trash.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Editor/Resources/Trash.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Editor/Resources/logoDark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Editor/Resources/logoDark.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Editor/Resources/logoLight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Editor/Resources/logoLight.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Examples.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Examples/Cube Forge.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Examples/Cube Forge/CubeForgeGame.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Examples/Cube Forge/CubeForgeGame.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Examples/Cube Forge/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Examples/Cube Forge/Materials/Camera.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Examples/Cube Forge/Materials/Camera.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Examples/Cube Forge/Prefabs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Examples/Cube Forge/Prefabs/Cube.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Examples/Cube Forge/Prefabs/Cube.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Examples/Cube Forge/Prefabs/Network Camera.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Examples/Cube Forge/Prefabs/Network Camera.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Examples/Cube Forge/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Examples/Cube Forge/Scripts/CubeForgeGame.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Examples/Cube Forge/Scripts/CubeForgeGame.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Examples/Cube Forge/Scripts/NetCam.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Examples/Cube Forge/Scripts/NetCam.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Examples/Cube Forge/Scripts/Primitive.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Examples/Cube Forge/Scripts/Primitive.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Examples/Cube Forge/Textures.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Examples/Cube Forge/Textures/Camera.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Examples/Cube Forge/Textures/Camera.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Examples/Proximity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Examples/Proximity/ExampleProximity.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Examples/Proximity/ExampleProximity.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Examples/Proximity/ExampleProximityPlayer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Examples/Proximity/ExampleProximityPlayer.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Examples/Proximity/ExampleProximitySpawn.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Examples/Proximity/ExampleProximitySpawn.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Examples/Proximity/ProximityPlayer.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Examples/Proximity/ProximityPlayer.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Generated.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Generated/NetworkManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Generated/NetworkManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Generated/NetworkObjectFactory.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Generated/NetworkObjectFactory.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Generated/UserGenerated.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Generated/UserGenerated/ChatManagerBehavior.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Generated/UserGenerated/ChatManagerBehavior.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Generated/UserGenerated/ChatManagerNetworkObject.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Generated/UserGenerated/ChatManagerNetworkObject.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Generated/UserGenerated/CubeForgeGameBehavior.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Generated/UserGenerated/CubeForgeGameBehavior.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Generated/UserGenerated/CubeForgeGameNetworkObject.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Generated/UserGenerated/CubeForgeGameNetworkObject.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Generated/UserGenerated/ExampleProximityPlayerBehavior.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Generated/UserGenerated/ExampleProximityPlayerBehavior.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Generated/UserGenerated/ExampleProximityPlayerNetworkObject.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Generated/UserGenerated/ExampleProximityPlayerNetworkObject.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Generated/UserGenerated/NetworkCameraBehavior.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Generated/UserGenerated/NetworkCameraBehavior.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Generated/UserGenerated/NetworkCameraNetworkObject.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Generated/UserGenerated/NetworkCameraNetworkObject.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Generated/UserGenerated/TestBehavior.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Generated/UserGenerated/TestBehavior.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Generated/UserGenerated/TestNetworkObject.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Generated/UserGenerated/TestNetworkObject.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Modules.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Modules/Chat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Modules/Chat/Chat Maker.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Modules/Chat/Chat Maker.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Modules/Chat/ChatMaker.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Modules/Chat/ChatMaker.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Modules/Chat/ChatManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Modules/Chat/ChatManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Modules/LobbySystem.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Modules/LobbySystem/LobbyManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Modules/LobbySystem/LobbyManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Modules/LobbySystem/LobbyPlayer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Modules/LobbySystem/LobbyPlayer.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Modules/LobbySystem/LobbyPlayerItem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Modules/LobbySystem/LobbyPlayerItem.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Modules/Prefabs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Modules/Prefabs/Chat.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Modules/Prefabs/Chat.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Modules/Prefabs/EventSystem.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Modules/Prefabs/EventSystem.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Modules/Prefabs/LobbyPlayerItem.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Modules/Prefabs/LobbyPlayerItem.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Modules/Prefabs/LobbySystem.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Modules/Prefabs/LobbySystem.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Modules/Prefabs/Message.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Modules/Prefabs/Message.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Modules/Stand Alone Chat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Modules/Stand Alone Chat/StandAloneChat.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Modules/Stand Alone Chat/StandAloneChat.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Modules/VOIP.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Modules/VOIP/VOIP.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Modules/VOIP/VOIP.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Modules/VOIP/VOIP.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Modules/VOIP/VOIP.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Modules/VOIP/VoipStarter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Modules/VOIP/VoipStarter.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Plugins.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Plugins/BeardedManStudios.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Plugins/BeardedManStudios.dll.mdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Plugins/BeardedManStudios.dll.mdb.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Plugins/BeardedManStudios.dll.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Plugins/ForgeNetworkingCommon.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Plugins/ForgeNetworkingCommon.dll.mdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Plugins/ForgeNetworkingCommon.dll.mdb.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Plugins/ForgeNetworkingCommon.dll.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Prefabs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Prefabs/NetworkManager.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Prefabs/NetworkManager.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Prefabs/Server Option.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Prefabs/Server Option.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Scenes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Scenes/Lobby.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Scenes/Lobby.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Scenes/MultiplayerMenu.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Scenes/MultiplayerMenu.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Scenes/ServerBrowser.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Scenes/ServerBrowser.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Scripts/BMSUnityExtensions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Scripts/BMSUnityExtensions.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Scripts/InterpolateQuaternion.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Scripts/InterpolateQuaternion.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Scripts/InterpolateVector2.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Scripts/InterpolateVector2.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Scripts/InterpolateVector3.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Scripts/InterpolateVector3.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Scripts/InterpolateVector4.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Scripts/InterpolateVector4.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Scripts/Logging.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Scripts/Logging/BMSLogger.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Scripts/Logging/BMSLogger.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Scripts/Logging/Resources.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Scripts/Logging/Resources/BMSLogger.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Scripts/Logging/Resources/BMSLogger.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Scripts/MainThreadManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Scripts/MainThreadManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Scripts/Multiplayer Menu.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Scripts/Multiplayer Menu/MultiplayerMenu.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Scripts/Multiplayer Menu/MultiplayerMenu.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Scripts/NetworkBehavior.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Scripts/NetworkBehavior.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Scripts/NetworkManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Scripts/NetworkManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Scripts/NetworkObjectFactory.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Scripts/NetworkObjectFactory.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Scripts/NetworkObjectFactoryBase.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Scripts/NetworkObjectFactoryBase.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Scripts/Server Browser.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Scripts/Server Browser/ServerBrowser.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Scripts/Server Browser/ServerBrowser.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Scripts/Server Browser/ServerBrowserItem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Scripts/Server Browser/ServerBrowserItem.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Scripts/UnityObjectMapper.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Scripts/UnityObjectMapper.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Nakama.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Nakama/Documentation.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Nakama/Documentation/Nakama 2 + Unity Engine.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Nakama/Documentation/Nakama 2 + Unity Engine.pdf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Nakama/Documentation/README.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Nakama/Documentation/README.pdf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Nakama/Plugins.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Nakama/Plugins/Nakama.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Nakama/Plugins/Nakama.dll.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Nakama/Plugins/deniszykov.WebSocketListener.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Nakama/Plugins/deniszykov.WebSocketListener.dll.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Nakama/Snippets.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Nakama/Snippets/AccountAndUsers.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Nakama/Snippets/AccountAndUsers.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Nakama/Snippets/AuthenticateWithDevice.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Nakama/Snippets/AuthenticateWithDevice.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Nakama/Snippets/SessionWithPlayerPrefs.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Nakama/Snippets/SessionWithPlayerPrefs.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Nakama/Snippets/SimpleSocket.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Nakama/Snippets/SimpleSocket.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Nakama/Snippets/SocketDebugger.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Nakama/Snippets/SocketDebugger.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Nakama/UnityLogger.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Nakama/UnityLogger.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/ServerListing.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/ServerListing.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MultiPlayerMenu.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MultiPlayerMenu.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/scripts/Constants.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/scripts/Constants.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/scripts/CreateMatch.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/scripts/CreateMatch.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/scripts/ServerBrowser.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/scripts/ServerBrowser.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/scripts/ServerListing.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/scripts/ServerListing.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/scripts/testscript.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/scripts/testscript.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,94 +254,96 @@
     <session id="101155065">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="4" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.5" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="cs" value="5" />
+          <entry key="cs" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="C#" value="5" />
+          <entry key="C#" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cs" value="293" />
+          <entry key="cs" value="3669" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="C#" value="293" />
+          <entry key="C#" value="3669" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/scripts/CreateMatch.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="672">
-              <caret line="42" column="35" selection-start-line="42" selection-start-column="35" selection-end-line="42" selection-end-column="35" />
-              <folding>
-                <marker date="1541426870467" expanded="true" signature="6:179" ph="..." />
-                <marker date="1541426870467" expanded="true" signature="222:1554" ph="{...}" />
-                <marker date="1541426870467" expanded="true" signature="298:701" ph="{...}" />
-                <marker date="1541426870467" expanded="true" signature="750:1552" ph="{...}" />
-                <marker date="1541426870467" expanded="true" signature="788:884" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Assets/scripts/ServerBrowser.cs">
+        <entry file="file://$PROJECT_DIR$/Assets/scripts/NetworkManager.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+            <state relative-caret-position="348">
+              <caret line="95" column="38" selection-start-line="95" selection-start-column="38" selection-end-line="95" selection-end-column="38" />
               <folding>
-                <marker date="1541428006166" expanded="false" signature="6:263" ph="..." />
-                <marker date="1541428006166" expanded="true" signature="308:4338" ph="{...}" />
-                <marker date="1541428006166" expanded="true" signature="634:789" ph="{...}" />
-                <marker date="1541428006166" expanded="true" signature="843:1651" ph="{...}" />
-                <marker date="1541428006166" expanded="true" signature="861:1471" ph="{...}" />
-                <marker date="1541428006166" expanded="true" signature="1494:1645" ph="{...}" />
-                <marker date="1541428006166" expanded="true" signature="1741:2984" ph="{...}" />
-                <marker date="1541428006166" expanded="true" signature="1759:2628" ph="{...}" />
-                <marker date="1541428006166" expanded="true" signature="1978:2618" ph="{...}" />
-                <marker date="1541428006166" expanded="true" signature="2166:2604" ph="{...}" />
-                <marker date="1541428006166" expanded="true" signature="2372:2586" ph="{...}" />
-                <marker date="1541428006166" expanded="true" signature="2644:2978" ph="{...}" />
-                <marker date="1541428006166" expanded="true" signature="2686:2968" ph="{...}" />
-                <marker date="1541428006166" expanded="true" signature="3136:3441" ph="{...}" />
-                <marker date="1541428006166" expanded="true" signature="3178:3433" ph="{...}" />
-                <marker date="1541428006166" expanded="true" signature="3534:3728" ph="{...}" />
-                <marker date="1541428006166" expanded="true" signature="3760:4162" ph="{...}" />
-                <marker date="1541428006166" expanded="true" signature="4200:4336" ph="{...}" />
-                <marker date="1541428006166" expanded="true" signature="4234:4330" ph="{...}" />
+                <marker date="1542622422695" expanded="false" signature="6:266" ph="..." />
+                <marker date="1542622422695" expanded="true" signature="311:4928" ph="{...}" />
+                <marker date="1542622422695" expanded="true" signature="943:1162" ph="{...}" />
+                <marker date="1542622422695" expanded="true" signature="1220:2379" ph="{...}" />
+                <marker date="1542622422695" expanded="true" signature="1265:1699" ph="{...}" />
+                <marker date="1542622422695" expanded="true" signature="1340:1689" ph="{...}" />
+                <marker date="1542622422695" expanded="true" signature="1739:2373" ph="{...}" />
+                <marker date="1542622422695" expanded="true" signature="1841:2324" ph="{...}" />
+                <marker date="1542622422695" expanded="true" signature="2405:3177" ph="{...}" />
+                <marker date="1542622422695" expanded="true" signature="2691:3147" ph="{...}" />
+                <marker date="1542622422695" expanded="true" signature="2762:3073" ph="{...}" />
+                <marker date="1542622422695" expanded="true" signature="2819:3059" ph="{...}" />
+                <marker date="1542622422695" expanded="true" signature="3271:4637" ph="{...}" />
+                <marker date="1542622422695" expanded="true" signature="3422:4604" ph="{...}" />
+                <marker date="1542622422695" expanded="true" signature="4430:4570" ph="{...}" />
+                <marker date="1542622422695" expanded="true" signature="4702:4853" ph="{...}" />
+                <marker date="1542622422695" expanded="true" signature="4891:4926" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/scripts/ServerListing.cs">
+        <entry file="file://$PROJECT_DIR$/Assets/scripts/TestPlayerController.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="31" column="42" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="42" />
+            <state relative-caret-position="272">
+              <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
               <folding>
-                <marker date="1541427734628" expanded="false" signature="6:192" ph="..." />
-                <marker date="1541427734628" expanded="true" signature="220:1826" ph="{...}" />
-                <marker date="1541427734628" expanded="true" signature="269:1824" ph="{...}" />
-                <marker date="1541427734628" expanded="true" signature="679:1005" ph="{...}" />
-                <marker date="1541427734628" expanded="true" signature="1039:1416" ph="{...}" />
-                <marker date="1541427734628" expanded="true" signature="1468:1818" ph="{...}" />
-                <marker date="1541427734628" expanded="true" signature="1514:1626" ph="{...}" />
+                <marker date="1542621913076" expanded="false" signature="6:96" ph="..." />
+                <marker date="1542621913076" expanded="true" signature="147:1117" ph="{...}" />
+                <marker date="1542621913076" expanded="true" signature="266:409" ph="{...}" />
+                <marker date="1542621913076" expanded="true" signature="480:492" ph="{...}" />
+                <marker date="1542621913076" expanded="true" signature="550:1115" ph="{...}" />
+                <marker date="1542621913076" expanded="true" signature="576:736" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/scripts/PlayerData.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="608">
+              <caret line="42" column="27" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="27" />
+              <folding>
+                <marker date="1542575124703" expanded="false" signature="6:103" ph="..." />
+                <marker date="1542575124703" expanded="true" signature="131:1444" ph="{...}" />
+                <marker date="1542575124703" expanded="true" signature="161:1442" ph="{...}" />
+                <marker date="1542575124703" expanded="true" signature="448:620" ph="{...}" />
+                <marker date="1542575124703" expanded="true" signature="678:830" ph="{...}" />
+                <marker date="1542575124703" expanded="true" signature="889:1195" ph="{...}" />
+                <marker date="1542575124703" expanded="true" signature="1249:1436" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -107,21 +351,31 @@
       </file>
     </leaf>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>15938</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/scripts/CreateMatch.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Scripts/Multiplayer Menu/MultiplayerMenu.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/scripts/ServerListing.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/scripts/ServerBrowser.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/scripts/TestPlayerController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/scripts/PlayerData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/scripts/NetworkManager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/scripts/CreateMatch.cs" />
         <option value="$PROJECT_DIR$/Assets/scripts/ServerListing.cs" />
+        <option value="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Examples/Cube Forge/Scripts/NetCam.cs" />
+        <option value="$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Examples/Cube Forge/Scripts/CubeForgeGame.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/CreateMatch.cs" />
         <option value="$PROJECT_DIR$/Assets/scripts/ServerBrowser.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/TestScript.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/PlayerData.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/TestPlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/scripts/NetworkManager.cs" />
       </list>
     </option>
   </component>
@@ -132,15 +386,19 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="2091" />
-    <option name="width" value="1390" />
-    <option name="height" value="772" />
+    <option name="x" value="1978" />
+    <option name="width" value="1862" />
+    <option name="height" value="1200" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator currentView="SolutionExplorer" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="FileSystemExplorer" />
       <pane id="SolutionExplorer">
         <subPane>
           <expand>
@@ -164,30 +422,6 @@
               <item name="FightingLegendsBangBangV3" type="24d0babc:SolutionExplorerModelNode" />
               <item name="Assembly-CSharp" type="24d0babc:SolutionExplorerModelNode" />
               <item name="Assets" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Bearded Man Studios Inc" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="FightingLegendsBangBangV3" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Assembly-CSharp" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Assets" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Bearded Man Studios Inc" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Scripts" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="FightingLegendsBangBangV3" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Assembly-CSharp" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Assets" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Bearded Man Studios Inc" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Scripts" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Multiplayer Menu" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="FightingLegendsBangBangV3" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Assembly-CSharp" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Assets" type="24d0babc:SolutionExplorerModelNode" />
               <item name="scripts" type="24d0babc:SolutionExplorerModelNode" />
             </path>
           </expand>
@@ -195,12 +429,12 @@
         </subPane>
         <option name="show-all-files" value="false" />
       </pane>
-      <pane id="FileSystemExplorer" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
     <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
+    <property name="SearchEverywhereHistoryKey" value="15938&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
   <component name="RunDashboard">
@@ -242,11 +476,15 @@
       <option name="presentableId" value="Default" />
       <updated>1541425372946</updated>
       <workItem from="1541425376721" duration="2975000" />
+      <workItem from="1541430946822" duration="6603000" />
+      <workItem from="1542544076954" duration="16520000" />
+      <workItem from="1542574621973" duration="1819000" />
+      <workItem from="1542620866595" duration="2156000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2975000" />
+    <option name="totallyTimeSpent" value="30073000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -260,17 +498,9 @@
   <component name="ToolWindowManager">
     <frame x="1978" y="0" width="1862" height="1200" extended-state="6" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2610132" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="NuGet" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Unity" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" weight="0.32959852" />
-      <window_info anchor="bottom" id="Unit Tests" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -278,11 +508,19 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Errors In Solution" />
-      <window_info anchor="right" id="Database" />
+      <window_info anchor="bottom" id="NuGet" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32959852" />
+      <window_info anchor="bottom" id="Unity" order="10" weight="0.32959852" />
+      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Unit Tests" order="12" />
+      <window_info anchor="bottom" id="Terminal" order="13" />
+      <window_info anchor="bottom" id="Event Log" order="14" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Errors In Solution" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -304,98 +542,68 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Assets/scripts/CreateMatch.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Generated/UserGenerated/NetworkCameraNetworkObject.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Examples/Cube Forge/Scripts/NetCam.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Generated/NetworkManager.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/scripts/CreateMatch.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/scripts/ServerBrowser.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Scripts/Multiplayer Menu/MultiplayerMenu.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Examples/Cube Forge/Scripts/CubeForgeGame.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/scripts/ServerListing.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/scripts/Constants.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/scripts/TestPlayerController.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="42" column="35" selection-start-line="42" selection-start-column="35" selection-end-line="42" selection-end-column="35" />
+        <state relative-caret-position="272">
+          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
           <folding>
-            <marker date="1541426870467" expanded="true" signature="6:179" ph="..." />
-            <marker date="1541426870467" expanded="true" signature="222:1554" ph="{...}" />
-            <marker date="1541426870467" expanded="true" signature="298:701" ph="{...}" />
-            <marker date="1541426870467" expanded="true" signature="750:1552" ph="{...}" />
-            <marker date="1541426870467" expanded="true" signature="788:884" ph="{...}" />
+            <marker date="1542621913076" expanded="false" signature="6:96" ph="..." />
+            <marker date="1542621913076" expanded="true" signature="147:1117" ph="{...}" />
+            <marker date="1542621913076" expanded="true" signature="266:409" ph="{...}" />
+            <marker date="1542621913076" expanded="true" signature="480:492" ph="{...}" />
+            <marker date="1542621913076" expanded="true" signature="550:1115" ph="{...}" />
+            <marker date="1542621913076" expanded="true" signature="576:736" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Bearded Man Studios Inc/Scripts/Multiplayer Menu/MultiplayerMenu.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/scripts/PlayerData.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="436">
-          <caret line="194" column="8" selection-start-line="194" selection-start-column="8" selection-end-line="205" selection-end-column="9" />
+        <state relative-caret-position="608">
+          <caret line="42" column="27" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="27" />
           <folding>
-            <marker date="1541348192000" expanded="false" signature="6:283" ph="..." />
-            <marker date="1541348192000" expanded="true" signature="329:7825" ph="{...}" />
-            <marker date="1541348192000" expanded="true" signature="1241:2028" ph="{...}" />
-            <marker date="1541348192000" expanded="true" signature="1377:1530" ph="{...}" />
-            <marker date="1541348192000" expanded="true" signature="1552:1714" ph="{...}" />
-            <marker date="1541348192000" expanded="true" signature="1860:2022" ph="{...}" />
-            <marker date="1541348192000" expanded="true" signature="2122:2214" ph="{...}" />
-            <marker date="1541348192000" expanded="true" signature="2241:3123" ph="{...}" />
-            <marker date="1541348192000" expanded="true" signature="2284:2360" ph="{...}" />
-            <marker date="1541348192000" expanded="true" signature="2439:2588" ph="{...}" />
-            <marker date="1541348192000" expanded="true" signature="2636:2767" ph="{...}" />
-            <marker date="1541348192000" expanded="true" signature="2780:3089" ph="{...}" />
-            <marker date="1541348192000" expanded="true" signature="3163:4439" ph="{...}" />
-            <marker date="1541348192000" expanded="true" signature="3652:4431" ph="{...}" />
-            <marker date="1541348192000" expanded="true" signature="3840:3974" ph="/* TODO: YOUR OWN MATCHMAKING EXTRA LOGIC HERE! ... */" />
-            <marker date="1541348192000" expanded="true" signature="4045:4421" ph="{...}" />
-            <marker date="1541348192000" expanded="true" signature="4463:5178" ph="{...}" />
-            <marker date="1541348192000" expanded="true" signature="4489:4593" ph="{...}" />
-            <marker date="1541348192000" expanded="true" signature="4606:4978" ph="{...}" />
-            <marker date="1541348192000" expanded="true" signature="5205:5592" ph="{...}" />
-            <marker date="1541348192000" expanded="true" signature="5387:5586" ph="{...}" />
-            <marker date="1541348192000" expanded="true" signature="5687:5814" ph="{...}" />
-            <marker date="1541348192000" expanded="true" signature="5862:7167" ph="{...}" />
-            <marker date="1541348192000" expanded="true" signature="5900:5996" ph="{...}" />
-            <marker date="1541348192000" expanded="true" signature="6082:7126" ph="/* If we are using the master server we need to get the registration data ... */" />
-            <marker date="1541348192000" expanded="true" signature="7234:7413" ph="{...}" />
-            <marker date="1541348192000" expanded="true" signature="7461:7572" ph="{...}" />
-            <marker date="1541348192000" expanded="true" signature="7610:7823" ph="{...}" />
-            <marker date="1541348192000" expanded="true" signature="7721:7817" ph="{...}" />
+            <marker date="1542575124703" expanded="false" signature="6:103" ph="..." />
+            <marker date="1542575124703" expanded="true" signature="131:1444" ph="{...}" />
+            <marker date="1542575124703" expanded="true" signature="161:1442" ph="{...}" />
+            <marker date="1542575124703" expanded="true" signature="448:620" ph="{...}" />
+            <marker date="1542575124703" expanded="true" signature="678:830" ph="{...}" />
+            <marker date="1542575124703" expanded="true" signature="889:1195" ph="{...}" />
+            <marker date="1542575124703" expanded="true" signature="1249:1436" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/scripts/ServerListing.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/scripts/NetworkManager.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="31" column="42" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="42" />
+        <state relative-caret-position="348">
+          <caret line="95" column="38" selection-start-line="95" selection-start-column="38" selection-end-line="95" selection-end-column="38" />
           <folding>
-            <marker date="1541427734628" expanded="false" signature="6:192" ph="..." />
-            <marker date="1541427734628" expanded="true" signature="220:1826" ph="{...}" />
-            <marker date="1541427734628" expanded="true" signature="269:1824" ph="{...}" />
-            <marker date="1541427734628" expanded="true" signature="679:1005" ph="{...}" />
-            <marker date="1541427734628" expanded="true" signature="1039:1416" ph="{...}" />
-            <marker date="1541427734628" expanded="true" signature="1468:1818" ph="{...}" />
-            <marker date="1541427734628" expanded="true" signature="1514:1626" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/scripts/ServerBrowser.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
-          <folding>
-            <marker date="1541428006166" expanded="false" signature="6:263" ph="..." />
-            <marker date="1541428006166" expanded="true" signature="308:4338" ph="{...}" />
-            <marker date="1541428006166" expanded="true" signature="634:789" ph="{...}" />
-            <marker date="1541428006166" expanded="true" signature="843:1651" ph="{...}" />
-            <marker date="1541428006166" expanded="true" signature="861:1471" ph="{...}" />
-            <marker date="1541428006166" expanded="true" signature="1494:1645" ph="{...}" />
-            <marker date="1541428006166" expanded="true" signature="1741:2984" ph="{...}" />
-            <marker date="1541428006166" expanded="true" signature="1759:2628" ph="{...}" />
-            <marker date="1541428006166" expanded="true" signature="1978:2618" ph="{...}" />
-            <marker date="1541428006166" expanded="true" signature="2166:2604" ph="{...}" />
-            <marker date="1541428006166" expanded="true" signature="2372:2586" ph="{...}" />
-            <marker date="1541428006166" expanded="true" signature="2644:2978" ph="{...}" />
-            <marker date="1541428006166" expanded="true" signature="2686:2968" ph="{...}" />
-            <marker date="1541428006166" expanded="true" signature="3136:3441" ph="{...}" />
-            <marker date="1541428006166" expanded="true" signature="3178:3433" ph="{...}" />
-            <marker date="1541428006166" expanded="true" signature="3534:3728" ph="{...}" />
-            <marker date="1541428006166" expanded="true" signature="3760:4162" ph="{...}" />
-            <marker date="1541428006166" expanded="true" signature="4200:4336" ph="{...}" />
-            <marker date="1541428006166" expanded="true" signature="4234:4330" ph="{...}" />
+            <marker date="1542622422695" expanded="false" signature="6:266" ph="..." />
+            <marker date="1542622422695" expanded="true" signature="311:4928" ph="{...}" />
+            <marker date="1542622422695" expanded="true" signature="943:1162" ph="{...}" />
+            <marker date="1542622422695" expanded="true" signature="1220:2379" ph="{...}" />
+            <marker date="1542622422695" expanded="true" signature="1265:1699" ph="{...}" />
+            <marker date="1542622422695" expanded="true" signature="1340:1689" ph="{...}" />
+            <marker date="1542622422695" expanded="true" signature="1739:2373" ph="{...}" />
+            <marker date="1542622422695" expanded="true" signature="1841:2324" ph="{...}" />
+            <marker date="1542622422695" expanded="true" signature="2405:3177" ph="{...}" />
+            <marker date="1542622422695" expanded="true" signature="2691:3147" ph="{...}" />
+            <marker date="1542622422695" expanded="true" signature="2762:3073" ph="{...}" />
+            <marker date="1542622422695" expanded="true" signature="2819:3059" ph="{...}" />
+            <marker date="1542622422695" expanded="true" signature="3271:4637" ph="{...}" />
+            <marker date="1542622422695" expanded="true" signature="3422:4604" ph="{...}" />
+            <marker date="1542622422695" expanded="true" signature="4430:4570" ph="{...}" />
+            <marker date="1542622422695" expanded="true" signature="4702:4853" ph="{...}" />
+            <marker date="1542622422695" expanded="true" signature="4891:4926" ph="{...}" />
           </folding>
         </state>
       </provider>
