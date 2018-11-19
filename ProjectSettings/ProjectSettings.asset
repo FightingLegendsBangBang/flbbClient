@@ -622,10 +622,10 @@ PlayerSettings:
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
   apiCompatibilityLevel: 6
-  cloudProjectId: 
+  cloudProjectId: 33e2cf1a-a64a-4e0a-9e4f-85fbc6166810
   framebufferDepthMemorylessMode: 0
-  projectName: 
-  organizationId: 
+  projectName: Test-Project
+  organizationId: unity_i4ifns_gag15cg
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0

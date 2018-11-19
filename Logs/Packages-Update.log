@@ -49,3 +49,11 @@ Update Mode: updateDependencies
 
 The following packages were updated:
   com.unity.package-manager-ui from version 2.0.2 to 2.0.3
+
+=== Mon Nov 19 18:37:24 2018
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were updated:
+  com.unity.analytics from version 3.0.9 to 3.2.0
