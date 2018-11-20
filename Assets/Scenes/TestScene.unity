@@ -247,7 +247,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyNetworkId: 0
   networkPrefabs:
-  - {fileID: 8384571351811867489, guid: b37284746058ebe849f3512d4651ea06, type: 3}
+  - {fileID: 6, guid: b37284746058ebe849f3512d4651ea06, type: 3}
+  - {fileID: 675656043449311675, guid: b6b3cfb58ca48184e97c0de028e02425, type: 3}
 --- !u!4 &1293344065
 Transform:
   m_ObjectHideFlags: 0

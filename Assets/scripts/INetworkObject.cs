@@ -16,4 +16,10 @@ public abstract class INetworkObject : MonoBehaviour
         owner = netWorkId == NetworkManager.Instance.MyNetworkId;
         nwm = NetworkManager.Instance;
     }
+
+    public void DestroyObject()
+    {
+        nwm.DestroyNetworkObject(objectId);
+        gameObject.SetActive(false);
+    }
 }

@@ -219,6 +219,14 @@ public class NetworkManager : MonoBehaviour
         client.FirstPeer.Send(writer, DeliveryMethod.ReliableOrdered);
     }
 
+    public void DestroyNetworkObject(int objectId)
+    {
+        NetDataWriter writer = new NetDataWriter();
+        writer.Put((ushort) 102);
+        writer.Put(objectId);
+        client.FirstPeer.Send(writer, DeliveryMethod.ReliableOrdered);
+    }
+
     private void InitPlayer(int netId, int playerId, string pName, bool isHost)
     {
         var p = new PlayerData(netId, playerId, isHost, pName);
