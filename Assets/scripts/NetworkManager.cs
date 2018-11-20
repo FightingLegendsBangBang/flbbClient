@@ -17,12 +17,12 @@ public class NetworkManager : MonoBehaviour
     public Thread mainThread;
     public EventBasedNetListener networkListener;
     public NetManager client;
-    public int myId;
+    public int MyNetworkId;
     private string _myName;
     public Dictionary<int, PlayerData> Players = new Dictionary<int, PlayerData>();
 
-    public List<Tuple<int, GameObject, Vector3, Quaternion>> playersToCreate =
-        new List<Tuple<int, GameObject, Vector3, Quaternion>>();
+    public List<Tuple<int, int, GameObject, Vector3, Quaternion>> playersToCreate =
+        new List<Tuple<int, int, GameObject, Vector3, Quaternion>>();
 
     public List<int> playersToDestroy = new List<int>();
 
@@ -51,12 +51,12 @@ public class NetworkManager : MonoBehaviour
             for (int i = 0; i < playersToCreate.Count; i++)
             {
                 var pl = playersToCreate[i];
-                var pobj = Instantiate(pl.Item2, pl.Item3, pl.Item4);
+                var pobj = Instantiate(pl.Item3, pl.Item4, pl.Item5);
 
                 var pc = pobj.GetComponent<TestPlayerController>();
-                pc.Init(pl.Item1);
+                pc.Init(pl.Item2, pl.Item1);
 
-                Players[pl.Item1].playerController = pc;
+                Players[pl.Item2].playerController = pc;
             }
 
             playersToCreate.Clear();
@@ -67,8 +67,20 @@ public class NetworkManager : MonoBehaviour
             Debug.Log("test");
             for (int i = 0; i < playersToDestroy.Count; i++)
             {
-                Destroy(Players[playersToDestroy[i]].playerController.gameObject);
-                Players.Remove(playersToDestroy[i]);
+                List<int> dl = new List<int>();
+                foreach (var player in Players)
+                {
+                    if (player.Value.networkId == playersToDestroy[i])
+                    {
+                        Destroy(Players[player.Key].playerController.gameObject);
+                        dl.Add(player.Key);
+                    }
+                }
+
+                foreach (int i1 in dl)
+                {
+                    Players.Remove(i1);
+                }
             }
 
             playersToDestroy.Clear();
@@ -87,16 +99,16 @@ public class NetworkManager : MonoBehaviour
         NetDataWriter writer = new NetDataWriter();
         while (true)
         {
-            if (Players.ContainsKey(myId) && client != null)
+            foreach (var player in Players)
             {
-                if (Players[myId] != null)
+                if (player.Value.networkId == MyNetworkId)
                 {
-                    if (Players[myId].position != Players[myId].oldPosition)
+                    if (player.Value.position != player.Value.oldPosition)
                     {
-                        Players[myId].WritePlayerData(writer);
+                        player.Value.WritePlayerData(writer);
                         client?.FirstPeer?.Send(writer, DeliveryMethod.Unreliable);
                         writer.Reset();
-                        Players[myId].oldPosition = Players[myId].position;
+                        player.Value.oldPosition = player.Value.position;
                     }
                 }
             }
@@ -117,16 +129,18 @@ public class NetworkManager : MonoBehaviour
         switch (msgid)
         {
             case 1: //register to server
-                var mid = reader.GetInt();
+                var networkId = reader.GetInt();
+                var playerId = reader.GetInt();
                 var isHost = reader.GetBool();
                 var pName = _myName;
-                myId = mid;
+                MyNetworkId = networkId;
 
 
-                InitPlayer(mid, pName, isHost, Vector3.zero);
+                InitPlayer(networkId, playerId, pName, isHost, Vector3.zero);
 
 
                 writer.Put((ushort) 1);
+                writer.Put(playerId);
                 writer.Put(pName);
                 writer.Put(isHost);
 
@@ -136,14 +150,15 @@ public class NetworkManager : MonoBehaviour
                 break;
 
             case 2: //register new player;
-                var npid = reader.GetInt();
+                var newNetworkId = reader.GetInt();
+                var newPlayerId = reader.GetInt();
                 var npName = reader.GetString();
                 var nIsHost = reader.GetBool();
                 var posx = reader.GetFloat();
                 var posy = reader.GetFloat();
                 var posz = reader.GetFloat();
                 var pos = new Vector3(posx, posy, posz);
-                InitPlayer(npid, npName, nIsHost, pos);
+                InitPlayer(newNetworkId, newPlayerId, npName, nIsHost, pos);
 
                 break;
             case 3: //remove disconnected player
@@ -164,11 +179,11 @@ public class NetworkManager : MonoBehaviour
         reader.Recycle();
     }
 
-    private void InitPlayer(int pid, string pName, bool isHost, Vector3 position)
+    private void InitPlayer(int netId, int playerId, string pName, bool isHost, Vector3 position)
     {
-        var p = new PlayerData(pid, isHost, pName, position);
+        var p = new PlayerData(netId, playerId, isHost, pName, position);
         p.CreatePlayerObject(playerPrefab);
-        Players.Add(pid, p);
+        Players.Add(playerId, p);
     }
 
     private void OnApplicationQuit()

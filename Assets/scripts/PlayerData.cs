@@ -8,6 +8,7 @@ namespace DefaultNamespace
 {
     public class PlayerData
     {
+        public int networkId;
         public int playerId;
         public TestPlayerController playerController;
         public bool isHost;
@@ -15,9 +16,10 @@ namespace DefaultNamespace
         public Vector3 position;
         public Vector3 oldPosition;
 
-        public PlayerData(int playerId, bool isHost, string playerName,
+        public PlayerData(int networkId, int playerId, bool isHost, string playerName,
             Vector3 position)
         {
+            this.networkId = networkId;
             this.playerId = playerId;
             this.isHost = isHost;
             this.playerName = playerName;
@@ -33,21 +35,19 @@ namespace DefaultNamespace
 
         public void WritePlayerData(NetDataWriter writer)
         {
-            float posX = position.x;
-            float posY = position.y;
-            float posZ = position.z;
-            
+
             writer.Put((ushort) 101);
             writer.Put(playerId);
-            writer.Put(posX);
-            writer.Put(posY);
-            writer.Put(posZ);
+            writer.Put(position.x);
+            writer.Put(position.y);
+            writer.Put(position.z);
         }
 
         public void CreatePlayerObject(GameObject p)
         {
             NetworkManager.Instance.playersToCreate.Add(
-                new Tuple<int, GameObject, Vector3, Quaternion>(playerId, p, position, Quaternion.identity));
+                new Tuple<int, int, GameObject, Vector3, Quaternion>(networkId, playerId, p, position,
+                    Quaternion.identity));
         }
     }
 }

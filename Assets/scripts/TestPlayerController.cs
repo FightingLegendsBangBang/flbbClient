@@ -6,13 +6,15 @@ using UnityEngine;
 public class TestPlayerController : MonoBehaviour
 {
     public int playerID;
+    public int netWorkID;
     private bool owner;
     private NetworkManager nwm;
 
-    public void Init(int playerID)
+    public void Init(int playerID,int netWorkID)
     {
         this.playerID = playerID;
-        owner = playerID == NetworkManager.Instance.myId;
+        this.netWorkID = netWorkID;
+        owner = netWorkID == NetworkManager.Instance.MyNetworkId;
         nwm = NetworkManager.Instance;
     }
 
