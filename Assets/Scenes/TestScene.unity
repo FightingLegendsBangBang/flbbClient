@@ -245,10 +245,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 092e132a4d7dd746e91721956ff6e618, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myId: 0
-  playersToDestroy: 
-  playerPrefab: {fileID: 8384571351811867489, guid: b37284746058ebe849f3512d4651ea06,
-    type: 3}
+  MyNetworkId: 0
+  networkPrefabs:
+  - {fileID: 8384571351811867489, guid: b37284746058ebe849f3512d4651ea06, type: 3}
 --- !u!4 &1293344065
 Transform:
   m_ObjectHideFlags: 0

@@ -6,7 +6,6 @@ using UnityEngine;
 using LiteNetLib;
 using System.Threading;
 using System.Threading.Tasks;
-using DefaultNamespace;
 using LiteNetLib.Utils;
 using Random = UnityEngine.Random;
 
@@ -20,13 +19,17 @@ public class NetworkManager : MonoBehaviour
     public int MyNetworkId;
     private string _myName;
     public Dictionary<int, PlayerData> Players = new Dictionary<int, PlayerData>();
+    public Dictionary<int, NetworkObjectData> NetworkObjects = new Dictionary<int, NetworkObjectData>();
+    public GameObject[] networkPrefabs;
 
-    public List<Tuple<int, int, GameObject, Vector3, Quaternion>> playersToCreate =
+    /*public List<Tuple<int, int, GameObject, Vector3, Quaternion>> playersToCreate =
         new List<Tuple<int, int, GameObject, Vector3, Quaternion>>();
 
-    public List<int> playersToDestroy = new List<int>();
+    public List<int> playersToDestroy = new List<int>();*/
 
-    public GameObject playerPrefab;
+    private List<NetworkObjectData> objectsToCreate = new List<NetworkObjectData>();
+    private List<int> objectsToDestroy = new List<int>();
+
 
     private void Awake()
     {
@@ -46,44 +49,26 @@ public class NetworkManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (playersToCreate.Count > 0)
+        if (objectsToCreate.Count > 0)
         {
-            for (int i = 0; i < playersToCreate.Count; i++)
+            foreach (var obj in objectsToCreate)
             {
-                var pl = playersToCreate[i];
-                var pobj = Instantiate(pl.Item3, pl.Item4, pl.Item5);
-
-                var pc = pobj.GetComponent<TestPlayerController>();
-                pc.Init(pl.Item2, pl.Item1);
-
-                Players[pl.Item2].playerController = pc;
+                obj.Instantiate(networkPrefabs[obj.objectType]);
+                NetworkObjects.Add(obj.objectId, obj);
             }
 
-            playersToCreate.Clear();
+            objectsToCreate.Clear();
         }
 
-        if (playersToDestroy.Count > 0)
+        if (objectsToDestroy.Count > 0)
         {
-            Debug.Log("test");
-            for (int i = 0; i < playersToDestroy.Count; i++)
+            foreach (var obj in objectsToDestroy)
             {
-                List<int> dl = new List<int>();
-                foreach (var player in Players)
-                {
-                    if (player.Value.networkId == playersToDestroy[i])
-                    {
-                        Destroy(Players[player.Key].playerController.gameObject);
-                        dl.Add(player.Key);
-                    }
-                }
-
-                foreach (int i1 in dl)
-                {
-                    Players.Remove(i1);
-                }
+                Destroy(NetworkObjects[obj].networkObject.gameObject);
+                NetworkObjects.Remove(obj);
             }
 
-            playersToDestroy.Clear();
+            objectsToDestroy.Clear();
         }
     }
 
@@ -99,16 +84,15 @@ public class NetworkManager : MonoBehaviour
         NetDataWriter writer = new NetDataWriter();
         while (true)
         {
-            foreach (var player in Players)
+            foreach (var obj in NetworkObjects)
             {
-                if (player.Value.networkId == MyNetworkId)
+                if (obj.Value.networkId == MyNetworkId)
                 {
-                    if (player.Value.position != player.Value.oldPosition)
+                    if (!obj.Value.CheckChanges())
                     {
-                        player.Value.WritePlayerData(writer);
-                        client?.FirstPeer?.Send(writer, DeliveryMethod.Unreliable);
                         writer.Reset();
-                        player.Value.oldPosition = player.Value.position;
+                        obj.Value.WriteData(writer);
+                        client?.FirstPeer?.Send(writer, DeliveryMethod.Unreliable);
                     }
                 }
             }
@@ -136,7 +120,7 @@ public class NetworkManager : MonoBehaviour
                 MyNetworkId = networkId;
 
 
-                InitPlayer(networkId, playerId, pName, isHost, Vector3.zero);
+                InitPlayer(networkId, playerId, pName, isHost);
 
 
                 writer.Put((ushort) 1);
@@ -146,7 +130,8 @@ public class NetworkManager : MonoBehaviour
 
                 client.FirstPeer.Send(writer, DeliveryMethod.ReliableOrdered);
 
-
+                writer.Reset();
+                InstantiateNetworkObject(0, playerId, Vector3.zero, Quaternion.identity);
                 break;
 
             case 2: //register new player;
@@ -154,35 +139,89 @@ public class NetworkManager : MonoBehaviour
                 var newPlayerId = reader.GetInt();
                 var npName = reader.GetString();
                 var nIsHost = reader.GetBool();
-                var posx = reader.GetFloat();
-                var posy = reader.GetFloat();
-                var posz = reader.GetFloat();
-                var pos = new Vector3(posx, posy, posz);
-                InitPlayer(newNetworkId, newPlayerId, npName, nIsHost, pos);
-
+                InitPlayer(newNetworkId, newPlayerId, npName, nIsHost);
                 break;
             case 3: //remove disconnected player
-                var rpid = reader.GetInt();
-                playersToDestroy.Add(rpid);
-                break;
-            case 101:
-                int pid = reader.GetInt();
-                foreach (var player in Players)
+                var rnid = reader.GetInt();
+                List<int> plrs = new List<int>();
+                foreach (var pl in Players)
                 {
-                    if (pid == player.Key)
-                        player.Value.ReadPlayerData(reader);
+                    if (pl.Value.networkId == rnid)
+                        plrs.Add(pl.Key);
                 }
 
+                foreach (var i in plrs)
+                {
+                    Players.Remove(i);
+                }
+
+                foreach (var no in NetworkObjects)
+                {
+                    if (no.Value.networkId == rnid)
+                        objectsToDestroy.Add(no.Key);
+                }
+
+                break;
+            case 101:
+                var OBobjectType = reader.GetInt();
+                var OBobjectId = reader.GetInt();
+                var OBplayerId = reader.GetInt();
+                var OBnetId = reader.GetInt();
+                var OBposX = reader.GetFloat();
+                var OBposY = reader.GetFloat();
+                var OBposZ = reader.GetFloat();
+                var OBrotX = reader.GetFloat();
+                var OBrotY = reader.GetFloat();
+                var OBrotZ = reader.GetFloat();
+                var OBrotW = reader.GetFloat();
+                var OBpos = new Vector3(OBposX, OBposY, OBposZ);
+                var OBrot = new Quaternion(OBrotX, OBrotY, OBrotZ, OBrotW);
+                var OBnetObj = new NetworkObjectData(
+                    OBobjectType,
+                    OBnetId,
+                    OBplayerId,
+                    OBobjectId,
+                    OBpos,
+                    OBrot);
+
+                objectsToCreate.Add(OBnetObj);
+
+                break;
+
+            case 102:
+                var objectToDelete = reader.GetInt();
+                objectsToDestroy.Add(objectToDelete);
+                break;
+
+            case 103:
+                var UobjectId = reader.GetInt();
+                if (NetworkObjects.ContainsKey(UobjectId))
+                    NetworkObjects[UobjectId].ReadData(reader);
                 break;
         }
 
         reader.Recycle();
     }
 
-    private void InitPlayer(int netId, int playerId, string pName, bool isHost, Vector3 position)
+    public void InstantiateNetworkObject(int objectType, int playerId, Vector3 position, Quaternion rotation)
     {
-        var p = new PlayerData(netId, playerId, isHost, pName, position);
-        p.CreatePlayerObject(playerPrefab);
+        NetDataWriter writer = new NetDataWriter();
+        writer.Put((ushort) 101);
+        writer.Put(objectType);
+        writer.Put(playerId);
+        writer.Put(position.x);
+        writer.Put(position.y);
+        writer.Put(position.z);
+        writer.Put(rotation.x);
+        writer.Put(rotation.y);
+        writer.Put(rotation.z);
+        writer.Put(rotation.w);
+        client.FirstPeer.Send(writer, DeliveryMethod.ReliableOrdered);
+    }
+
+    private void InitPlayer(int netId, int playerId, string pName, bool isHost)
+    {
+        var p = new PlayerData(netId, playerId, isHost, pName);
         Players.Add(playerId, p);
     }
 

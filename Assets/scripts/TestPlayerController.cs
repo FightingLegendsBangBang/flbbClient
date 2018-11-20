@@ -3,32 +3,17 @@ using System.Collections.Generic;
 using LiteNetLib;
 using UnityEngine;
 
-public class TestPlayerController : MonoBehaviour
+public class TestPlayerController : INetworkObject
 {
-    public int playerID;
-    public int netWorkID;
-    private bool owner;
-    private NetworkManager nwm;
-
-    public void Init(int playerID,int netWorkID)
-    {
-        this.playerID = playerID;
-        this.netWorkID = netWorkID;
-        owner = netWorkID == NetworkManager.Instance.MyNetworkId;
-        nwm = NetworkManager.Instance;
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
     // Update is called once per frame
     void Update()
     {
         if (!owner)
         {
-            transform.position = Vector3.Lerp(transform.position, nwm.Players[playerID].position, Time.deltaTime * 50);
+            transform.position = Vector3.Lerp(transform.position, nwm.NetworkObjects[objectId].position,
+                Time.deltaTime * 50);
+            transform.rotation = Quaternion.Lerp(transform.rotation, nwm.NetworkObjects[objectId].rotation,
+                Time.deltaTime * 50);
             return;
         }
 
@@ -38,6 +23,7 @@ public class TestPlayerController : MonoBehaviour
 
         transform.position += new Vector3(horizontal * Time.deltaTime * 10, 0, vertical * Time.deltaTime * 10);
 
-        nwm.Players[playerID].position = transform.position;
+        
+        nwm.NetworkObjects[objectId].position = transform.position;
     }
 }
