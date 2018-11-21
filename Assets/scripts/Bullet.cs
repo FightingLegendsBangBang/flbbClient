@@ -34,7 +34,11 @@ public class Bullet : INetworkObject
             var player = other.gameObject.GetComponent<INetworkObject>();
 
             if (player.playerId != playerId)
+            {
+                player.SendRPC("RPC_TakeDamage", playerId, Random.value.ToString(), Random.value.ToString(),
+                    Random.value.ToString());
                 DestroyObject();
+            }
         }
     }
 }

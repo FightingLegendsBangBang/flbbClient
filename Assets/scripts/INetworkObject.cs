@@ -51,12 +51,13 @@ public abstract class INetworkObject : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public void SendRPC(string rpcName, params string[] args)
+    public void SendRPC(string rpcName, int sender, params string[] args)
     {
         NetDataWriter writer = new NetDataWriter();
         writer.Put((ushort) 201);
         writer.Put(rpcName);
         writer.Put(objectId);
+        writer.Put(sender);
         foreach (var o in args)
         {
             writer.Put(o);

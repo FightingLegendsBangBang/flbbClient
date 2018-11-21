@@ -28,22 +28,21 @@ public class TestPlayerController : INetworkObject
 
         if (Input.GetKeyDown(KeyCode.J))
             Shoot();
-
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            SendRPC("RPC_test", "20", "30", "50");
-        }
     }
 
-    public void RPC_test(byte[] data)
+
+    public void RPC_TakeDamage(byte[] data)
     {
         var dataReader = new NetDataReader();
         dataReader.SetSource(data);
+        var sender = dataReader.GetInt();
 
-        Debug.Log(dataReader.GetString());
-        Debug.Log(dataReader.GetString());
-        Debug.Log(dataReader.GetString());
-        Debug.Log("test");
+        float r = float.Parse(dataReader.GetString());
+        float g = float.Parse(dataReader.GetString());
+        float b = float.Parse(dataReader.GetString());
+
+        Color newColor = new Color(r, g, b, 1.0f);
+        GetComponent<Renderer>().material.color = newColor;
     }
 
     void Shoot()
