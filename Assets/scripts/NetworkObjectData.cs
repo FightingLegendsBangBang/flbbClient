@@ -49,6 +49,9 @@ public class NetworkObjectData
         writer.Put(rotation.y);
         writer.Put(rotation.z);
         writer.Put(rotation.w);
+
+        oldPosition = position;
+        oldRotation = rotation;
     }
 
     public bool CheckChanges()

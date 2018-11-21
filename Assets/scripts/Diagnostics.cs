@@ -41,7 +41,12 @@ public class Diagnostics : MonoBehaviour
             string playersText = string.Format("{0} players\n", players);
             string fpsText = string.Format("{0:0.0} ms ({1:0.} fps)\n", msec, fps);
             string pingText = string.Format("ping: {0} ms\n", ping);
-            string text = playersText + fpsText + pingText;
+            string bytesSendText = string.Format("bytes send: {0}\n", nwm.client.Statistics.BytesSent);
+            string bytesReceivedText = string.Format("bytes received: {0}\n", nwm.client.Statistics.BytesReceived);
+            string packagesSendText = string.Format("packages send: {0}\n", nwm.client.Statistics.PacketsSent);
+            string packagesReceivedText = string.Format("packages received: {0}\n", nwm.client.Statistics.PacketsReceived);
+            string text = playersText + fpsText + pingText + bytesSendText + bytesReceivedText + packagesSendText +
+                          packagesReceivedText;
 
             GUI.Label(rect, text, style);
         }

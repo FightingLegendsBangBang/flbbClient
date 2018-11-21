@@ -16,11 +16,14 @@ public class NetworkManager : MonoBehaviour
     public Thread mainThread;
     public EventBasedNetListener networkListener;
     public NetManager client;
+    public readonly NetPacketProcessor netPacketProcessor = new NetPacketProcessor();
     public int MyNetworkId;
     private string _myName;
     public Dictionary<int, PlayerData> Players = new Dictionary<int, PlayerData>();
     public Dictionary<int, NetworkObjectData> NetworkObjects = new Dictionary<int, NetworkObjectData>();
     public GameObject[] networkPrefabs;
+
+    private List<Tuple<string, int, byte[]>> rpcList = new List<Tuple<string, int, byte[]>>();
 
     /*public List<Tuple<int, int, GameObject, Vector3, Quaternion>> playersToCreate =
         new List<Tuple<int, int, GameObject, Vector3, Quaternion>>();
@@ -70,6 +73,17 @@ public class NetworkManager : MonoBehaviour
 
             objectsToDestroy.Clear();
         }
+
+        if (rpcList.Count > 0)
+        {
+            foreach (var rpc in rpcList)
+            {
+                NetworkObjects[rpc.Item2].networkObject
+                    .SendMessage(rpc.Item1, rpc.Item3, SendMessageOptions.DontRequireReceiver);
+            }
+
+            rpcList.Clear();
+        }
     }
 
     void UpdateNetwork()
@@ -92,7 +106,7 @@ public class NetworkManager : MonoBehaviour
                     {
                         writer.Reset();
                         obj.Value.WriteData(writer);
-                        client?.FirstPeer?.Send(writer, DeliveryMethod.Unreliable);
+                        Send(writer, DeliveryMethod.Unreliable);
                     }
                 }
             }
@@ -106,8 +120,11 @@ public class NetworkManager : MonoBehaviour
 
     void ReceivePackage(NetPeer peer, NetPacketReader reader, DeliveryMethod deliveryMethod)
     {
-        NetDataWriter writer = new NetDataWriter();
+        client.Statistics.BytesReceived += (ulong) reader.RawDataSize;
+        client.Statistics.PacketsReceived++;
 
+
+        NetDataWriter writer = new NetDataWriter();
         ushort msgid = reader.GetUShort();
         Debug.Log(msgid);
         switch (msgid)
@@ -128,7 +145,7 @@ public class NetworkManager : MonoBehaviour
                 writer.Put(pName);
                 writer.Put(isHost);
 
-                client.FirstPeer.Send(writer, DeliveryMethod.ReliableOrdered);
+                Send(writer, DeliveryMethod.ReliableOrdered);
 
                 writer.Reset();
                 InstantiateNetworkObject(0, playerId, Vector3.zero, Quaternion.identity);
@@ -198,6 +215,12 @@ public class NetworkManager : MonoBehaviour
                 if (NetworkObjects.ContainsKey(UobjectId))
                     NetworkObjects[UobjectId].ReadData(reader);
                 break;
+            case 201:
+                var rpcName = reader.GetString();
+                var rpcObjectId = reader.GetInt();
+                rpcList.Add(new Tuple<string, int, byte[]>(rpcName, rpcObjectId, reader.GetRemainingBytes()));
+
+                break;
         }
 
         reader.Recycle();
@@ -216,7 +239,7 @@ public class NetworkManager : MonoBehaviour
         writer.Put(rotation.y);
         writer.Put(rotation.z);
         writer.Put(rotation.w);
-        client.FirstPeer.Send(writer, DeliveryMethod.ReliableOrdered);
+        Send(writer, DeliveryMethod.ReliableOrdered);
     }
 
     public void DestroyNetworkObject(int objectId)
@@ -224,13 +247,21 @@ public class NetworkManager : MonoBehaviour
         NetDataWriter writer = new NetDataWriter();
         writer.Put((ushort) 102);
         writer.Put(objectId);
-        client.FirstPeer.Send(writer, DeliveryMethod.ReliableOrdered);
+        Send(writer, DeliveryMethod.ReliableOrdered);
     }
 
     private void InitPlayer(int netId, int playerId, string pName, bool isHost)
     {
         var p = new PlayerData(netId, playerId, isHost, pName);
         Players.Add(playerId, p);
+    }
+
+    public void Send(NetDataWriter writer, DeliveryMethod method)
+    {
+        client.Statistics.BytesSent += (ulong) writer.Data.Length;
+        client.Statistics.PacketsSent++;
+
+        client?.FirstPeer?.Send(writer, method);
     }
 
     private void OnApplicationQuit()

@@ -15,24 +15,13 @@ public class Bullet : INetworkObject
         startTime = Time.time;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (!owner)
-        {
-            transform.position = Vector3.Lerp(transform.position, nwm.NetworkObjects[objectId].position,
-                Time.deltaTime * 50);
-            transform.rotation = nwm.NetworkObjects[objectId].rotation;
-            return;
-        }
 
+    public override void ObjectUpdate()
+    {
         if (startTime + lifeTime < Time.time)
             DestroyObject();
 
         transform.position += transform.forward * Time.deltaTime * 25;
-
-        nwm.NetworkObjects[objectId].position = transform.position;
-        nwm.NetworkObjects[objectId].rotation = transform.rotation;
     }
 
     private void OnCollisionEnter(Collision other)
