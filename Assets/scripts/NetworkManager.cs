@@ -216,6 +216,7 @@ public class NetworkManager : MonoBehaviour
                     NetworkObjects[UobjectId].ReadData(reader);
                 break;
             case 201:
+                var rpcTarget = reader.GetByte();
                 var rpcName = reader.GetString();
                 var rpcObjectId = reader.GetInt();
                 rpcList.Add(new Tuple<string, int, byte[]>(rpcName, rpcObjectId, reader.GetRemainingBytes()));

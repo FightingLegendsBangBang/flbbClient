@@ -4,6 +4,13 @@ using UnityEngine;
 
 public abstract class INetworkObject : MonoBehaviour
 {
+    public enum rpcTarget
+    {
+        one = 0,
+        other = 1,
+        all = 2
+    }
+
     public int playerId;
     public int netWorkId;
     public int objectId;
@@ -30,11 +37,11 @@ public abstract class INetworkObject : MonoBehaviour
         {
             transform.position = interpolatePosition
                 ? Vector3.Lerp(transform.position, nwm.NetworkObjects[objectId].position,
-                    Time.deltaTime * interPolationAmountPosition)
+                    0.2f)
                 : nwm.NetworkObjects[objectId].position;
             transform.rotation = interpolateRotation
                 ? Quaternion.Lerp(transform.rotation, nwm.NetworkObjects[objectId].rotation,
-                    Time.deltaTime * interPolationAmountRotation)
+                    0.2f)
                 : nwm.NetworkObjects[objectId].rotation;
             return;
         }
@@ -51,10 +58,11 @@ public abstract class INetworkObject : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public void SendRPC(string rpcName, int sender, params string[] args)
+    public void SendRPC(string rpcName, int sender, rpcTarget target, params string[] args)
     {
         NetDataWriter writer = new NetDataWriter();
         writer.Put((ushort) 201);
+        writer.Put((byte) target);
         writer.Put(rpcName);
         writer.Put(objectId);
         writer.Put(sender);
