@@ -145,7 +145,7 @@ public class NetworkManager : MonoBehaviour
                 Send(writer, DeliveryMethod.ReliableOrdered);
 
                 writer.Reset();
-                InstantiateNetworkObject(0, playerId, Vector3.zero, Quaternion.identity);
+                //InstantiateNetworkObject(0, playerId, Vector3.zero, Quaternion.identity);
                 break;
 
             case 2: //register new player;
