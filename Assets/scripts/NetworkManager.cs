@@ -6,6 +6,7 @@ using UnityEngine;
 using LiteNetLib;
 using System.Threading;
 using System.Threading.Tasks;
+using DefaultNamespace;
 using LiteNetLib.Utils;
 using Random = UnityEngine.Random;
 
@@ -23,13 +24,9 @@ public class NetworkManager : MonoBehaviour
     public Dictionary<int, NetworkObjectData> NetworkObjects = new Dictionary<int, NetworkObjectData>();
     public GameObject[] networkPrefabs;
 
+    private ObjectDataFactory objectDataFactory = new ObjectDataFactory();
+
     private List<Tuple<string, int, byte[]>> rpcList = new List<Tuple<string, int, byte[]>>();
-
-    /*public List<Tuple<int, int, GameObject, Vector3, Quaternion>> playersToCreate =
-        new List<Tuple<int, int, GameObject, Vector3, Quaternion>>();
-
-    public List<int> playersToDestroy = new List<int>();*/
-
     private List<NetworkObjectData> objectsToCreate = new List<NetworkObjectData>();
     private List<int> objectsToDestroy = new List<int>();
 
@@ -94,7 +91,7 @@ public class NetworkManager : MonoBehaviour
 
         client = new NetManager(networkListener);
         client.Start();
-        client.Connect("127.0.0.1", 9050, "SomeConnectionKey");
+        client.Connect("192.168.2.4", 9050, "SomeConnectionKey");
         NetDataWriter writer = new NetDataWriter();
         while (true)
         {
@@ -112,7 +109,7 @@ public class NetworkManager : MonoBehaviour
             }
 
             client.PollEvents();
-            Thread.Sleep(16);
+            Thread.Sleep(20);
         }
 
         client.Stop();
@@ -193,7 +190,7 @@ public class NetworkManager : MonoBehaviour
                 var OBrotW = reader.GetFloat();
                 var OBpos = new Vector3(OBposX, OBposY, OBposZ);
                 var OBrot = new Quaternion(OBrotX, OBrotY, OBrotZ, OBrotW);
-                var OBnetObj = new NetworkObjectData(
+                var OBnetObj = objectDataFactory.createObjectData(
                     OBobjectType,
                     OBnetId,
                     OBplayerId,

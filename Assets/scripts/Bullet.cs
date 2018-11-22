@@ -9,6 +9,8 @@ public class Bullet : INetworkObject
 
     private void Start()
     {
+        interPolationAmountPosition = 100;
+
         if (!owner)
             return;
 

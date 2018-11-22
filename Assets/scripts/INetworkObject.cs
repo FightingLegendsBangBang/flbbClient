@@ -19,8 +19,8 @@ public abstract class INetworkObject : MonoBehaviour
 
     protected bool interpolatePosition = true;
     protected bool interpolateRotation = true;
-    protected float interPolationAmountPosition = 50f;
-    protected float interPolationAmountRotation = 50f;
+    protected float interPolationAmountPosition = 60f;
+    protected float interPolationAmountRotation = 60f;
 
     public void Init(int playerId, int objectId, int netWorkId)
     {
@@ -37,11 +37,11 @@ public abstract class INetworkObject : MonoBehaviour
         {
             transform.position = interpolatePosition
                 ? Vector3.Lerp(transform.position, nwm.NetworkObjects[objectId].position,
-                    0.2f)
+                    Time.deltaTime * interPolationAmountPosition)
                 : nwm.NetworkObjects[objectId].position;
             transform.rotation = interpolateRotation
                 ? Quaternion.Lerp(transform.rotation, nwm.NetworkObjects[objectId].rotation,
-                    0.2f)
+                    Time.deltaTime * interPolationAmountRotation)
                 : nwm.NetworkObjects[objectId].rotation;
             return;
         }

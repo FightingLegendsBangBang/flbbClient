@@ -23,7 +23,7 @@ public class TestPlayerController : INetworkObject
         if (newLookDirection != Vector3.zero)
             lookDirection = newLookDirection;
 
-        transform.position += new Vector3(horizontal * Time.deltaTime * 10, 0, vertical * Time.deltaTime * 10);
+        transform.position += new Vector3(horizontal, 0, vertical).normalized * Time.deltaTime * 10;
         transform.rotation = Quaternion.LookRotation(lookDirection);
 
         if (Input.GetKeyDown(KeyCode.J))

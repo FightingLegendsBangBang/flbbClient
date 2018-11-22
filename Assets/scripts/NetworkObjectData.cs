@@ -27,7 +27,7 @@ public class NetworkObjectData
         this.rotation = rotation;
     }
 
-    public void ReadData(NetDataReader reader)
+    public virtual void ReadData(NetDataReader reader)
     {
         position.x = reader.GetFloat();
         position.y = reader.GetFloat();
@@ -38,7 +38,7 @@ public class NetworkObjectData
         rotation.w = reader.GetFloat();
     }
 
-    public void WriteData(NetDataWriter writer)
+    public virtual void WriteData(NetDataWriter writer)
     {
         writer.Put((ushort) 103);
         writer.Put(objectId);
@@ -54,7 +54,7 @@ public class NetworkObjectData
         oldRotation = rotation;
     }
 
-    public bool CheckChanges()
+    public virtual bool CheckChanges()
     {
         return position == oldPosition && rotation == oldRotation;
     }
