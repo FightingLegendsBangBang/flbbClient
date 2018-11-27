@@ -20,6 +20,7 @@ public class NetworkManager : MonoBehaviour
     public readonly NetPacketProcessor netPacketProcessor = new NetPacketProcessor();
     public int MyNetworkId;
     private string _myName;
+    private Color _myColor;
     public Dictionary<int, PlayerData> Players = new Dictionary<int, PlayerData>();
     public Dictionary<int, NetworkObjectData> NetworkObjects = new Dictionary<int, NetworkObjectData>();
     public GameObject[] networkPrefabs;
@@ -29,18 +30,20 @@ public class NetworkManager : MonoBehaviour
     private List<Tuple<string, int, byte[]>> rpcList = new List<Tuple<string, int, byte[]>>();
     private List<NetworkObjectData> objectsToCreate = new List<NetworkObjectData>();
     private List<int> objectsToDestroy = new List<int>();
+    private int LevelToLoad = -1;
 
 
     private void Awake()
     {
         Instance = this;
+        DontDestroyOnLoad(this);
     }
 
     // Start is called before the first frame update
     void Start()
     {
         _myName = "player " + Random.Range(1000, 9999);
-
+        _myColor = new Color(Random.value, Random.value, Random.value);
         mainThread = Thread.CurrentThread;
         networkThread = new Thread(UpdateNetwork);
         networkThread.Start();
@@ -81,6 +84,21 @@ public class NetworkManager : MonoBehaviour
 
             rpcList.Clear();
         }
+
+        if (LevelToLoad != -1)
+        {
+            InfoManager.Instance.Levels[LevelToLoad].LoadLevel();
+
+            foreach (var player in Players)
+            {
+                if (player.Value.networkId == MyNetworkId)
+                {
+                    InstantiateNetworkObject(InfoManager.Instance.Characters[player.Value.characterId].CharacterPrefabId, player.Key, Vector3.zero, Quaternion.identity);
+                }
+            }
+
+            LevelToLoad = -1;
+        }
     }
 
     void UpdateNetwork()
@@ -91,7 +109,7 @@ public class NetworkManager : MonoBehaviour
 
         client = new NetManager(networkListener);
         client.Start();
-        client.Connect("192.168.2.4", 9050, "SomeConnectionKey");
+        client.Connect("localhost", 9050, "SomeConnectionKey");
         NetDataWriter writer = new NetDataWriter();
         while (true)
         {
@@ -130,22 +148,28 @@ public class NetworkManager : MonoBehaviour
                 var networkId = reader.GetInt();
                 var playerId = reader.GetInt();
                 var isHost = reader.GetBool();
+                var charId = 0;
+                var playerColor = _myColor;
                 var pName = _myName;
                 MyNetworkId = networkId;
 
 
-                InitPlayer(networkId, playerId, pName, isHost);
+                InitPlayer(networkId, playerId, pName, isHost, charId, playerColor);
 
 
                 writer.Put((ushort) 1);
                 writer.Put(playerId);
                 writer.Put(pName);
                 writer.Put(isHost);
+                writer.Put(charId);
+                writer.Put(playerColor.r);
+                writer.Put(playerColor.g);
+                writer.Put(playerColor.b);
 
                 Send(writer, DeliveryMethod.ReliableOrdered);
 
                 writer.Reset();
-                //InstantiateNetworkObject(0, playerId, Vector3.zero, Quaternion.identity);
+                LobbyManager.Instance.NeedUpdate = true;
                 break;
 
             case 2: //register new player;
@@ -153,7 +177,15 @@ public class NetworkManager : MonoBehaviour
                 var newPlayerId = reader.GetInt();
                 var npName = reader.GetString();
                 var nIsHost = reader.GetBool();
-                InitPlayer(newNetworkId, newPlayerId, npName, nIsHost);
+                var newCharId = reader.GetInt();
+                var newPlayerColor = new Color(
+                    reader.GetFloat(),
+                    reader.GetFloat(),
+                    reader.GetFloat());
+                InitPlayer(newNetworkId, newPlayerId, npName, nIsHost, newCharId, newPlayerColor);
+
+                LobbyManager.Instance.NeedUpdate = true;
+
                 break;
             case 3: //remove disconnected player
                 var rnid = reader.GetInt();
@@ -175,6 +207,12 @@ public class NetworkManager : MonoBehaviour
                         objectsToDestroy.Add(no.Key);
                 }
 
+                LobbyManager.Instance.NeedUpdate = true;
+
+                break;
+            case 4:
+                Players[reader.GetInt()].ReadPlayerData(reader);
+                LobbyManager.Instance.NeedUpdate = true;
                 break;
             case 101:
                 var OBobjectType = reader.GetInt();
@@ -219,6 +257,13 @@ public class NetworkManager : MonoBehaviour
                 rpcList.Add(new Tuple<string, int, byte[]>(rpcName, rpcObjectId, reader.GetRemainingBytes()));
 
                 break;
+
+            case 301:
+                var levelId = reader.GetInt();
+
+                LevelToLoad = levelId;
+
+                break;
         }
 
         reader.Recycle();
@@ -248,9 +293,9 @@ public class NetworkManager : MonoBehaviour
         Send(writer, DeliveryMethod.ReliableOrdered);
     }
 
-    private void InitPlayer(int netId, int playerId, string pName, bool isHost)
+    private void InitPlayer(int netId, int playerId, string pName, bool isHost, int charId, Color playerColor)
     {
-        var p = new PlayerData(netId, playerId, isHost, pName);
+        var p = new PlayerData(netId, playerId, isHost, pName, charId, playerColor);
         Players.Add(playerId, p);
     }
 
