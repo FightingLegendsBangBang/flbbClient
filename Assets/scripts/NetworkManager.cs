@@ -8,6 +8,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using DefaultNamespace;
 using LiteNetLib.Utils;
+using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 public class NetworkManager : MonoBehaviour
@@ -19,6 +20,7 @@ public class NetworkManager : MonoBehaviour
     public NetManager client;
     public readonly NetPacketProcessor netPacketProcessor = new NetPacketProcessor();
     public int MyNetworkId;
+    public bool IsHost;
     private string _myName;
     private Color _myColor;
     public Dictionary<int, PlayerData> Players = new Dictionary<int, PlayerData>();
@@ -37,6 +39,8 @@ public class NetworkManager : MonoBehaviour
     {
         Instance = this;
         DontDestroyOnLoad(this);
+
+        SceneManager.LoadScene("LobbyScene");
     }
 
     // Start is called before the first frame update
@@ -87,13 +91,24 @@ public class NetworkManager : MonoBehaviour
 
         if (LevelToLoad != -1)
         {
-            InfoManager.Instance.Levels[LevelToLoad].LoadLevel();
+            NetworkObjects.Clear();
 
-            foreach (var player in Players)
+            if (LevelToLoad == -2)
             {
-                if (player.Value.networkId == MyNetworkId)
+                SceneManager.LoadScene("LobbyScene");
+            }
+            else
+            {
+                InfoManager.Instance.Levels[LevelToLoad].LoadLevel();
+
+                foreach (var player in Players)
                 {
-                    InstantiateNetworkObject(InfoManager.Instance.Characters[player.Value.characterId].CharacterPrefabId, player.Key, Vector3.zero, Quaternion.identity);
+                    if (player.Value.networkId == MyNetworkId)
+                    {
+                        InstantiateNetworkObject(
+                            InfoManager.Instance.Characters[player.Value.characterId].CharacterPrefabId, player.Key,
+                            Vector3.zero, Quaternion.identity);
+                    }
                 }
             }
 
@@ -152,7 +167,7 @@ public class NetworkManager : MonoBehaviour
                 var playerColor = _myColor;
                 var pName = _myName;
                 MyNetworkId = networkId;
-
+                IsHost = isHost;
 
                 InitPlayer(networkId, playerId, pName, isHost, charId, playerColor);
 

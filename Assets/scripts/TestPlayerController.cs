@@ -28,6 +28,14 @@ public class TestPlayerController : INetworkObject
 
         if (Input.GetKeyDown(KeyCode.J))
             Shoot();
+
+        if (Input.GetKeyDown(KeyCode.Escape) && nwm.IsHost)
+        {
+            NetDataWriter writer = new NetDataWriter();
+            writer.Put((ushort) 301);
+            writer.Put(-2);
+            nwm.Send(writer, DeliveryMethod.ReliableOrdered);
+        }
     }
 
 

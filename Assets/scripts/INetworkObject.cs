@@ -33,6 +33,9 @@ public abstract class INetworkObject : MonoBehaviour
 
     private void Update()
     {
+        if (!nwm.NetworkObjects.ContainsKey(objectId))
+            return;
+        
         if (!owner)
         {
             transform.position = interpolatePosition

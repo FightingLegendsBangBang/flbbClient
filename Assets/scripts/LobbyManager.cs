@@ -48,6 +48,8 @@ public class LobbyManager : MonoBehaviour
         }
 
         ButtonStartGame.gameObject.SetActive(false);
+
+        NeedUpdate = true;
     }
 
     // Update is called once per frame
