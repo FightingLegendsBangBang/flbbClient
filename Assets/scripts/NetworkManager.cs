@@ -82,8 +82,25 @@ public class NetworkManager : MonoBehaviour
         {
             foreach (var rpc in rpcList)
             {
-                NetworkObjects[rpc.Item2].networkObject
-                    .SendMessage(rpc.Item1, rpc.Item3, SendMessageOptions.DontRequireReceiver);
+                NetDataReader reader = new NetDataReader();
+                reader.SetSource(rpc.Item3);
+
+                List<object> parameters = new List<object>();
+
+                var metargs = RpcManager.Instance.Rpcs[rpc.Item1].GetParameters();
+
+                foreach (var parameterInfo in metargs)
+                {
+                    if (parameterInfo.ParameterType == typeof(int))
+                        parameters.Add(reader.GetInt());
+                    else if (parameterInfo.ParameterType == typeof(string))
+                        parameters.Add(reader.GetString());
+                    else if (parameterInfo.ParameterType == typeof(float))
+                        parameters.Add(reader.GetFloat());
+                }
+
+                RpcManager.Instance.Rpcs[rpc.Item1]
+                    .Invoke(NetworkObjects[rpc.Item2].networkObject, parameters.ToArray());
             }
 
             rpcList.Clear();

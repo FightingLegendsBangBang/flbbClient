@@ -38,16 +38,9 @@ public class TestPlayerController : INetworkObject
         }
     }
 
-
-    public void RPC_TakeDamage(byte[] data)
+    [NetRPC]
+    public void RPC_TakeDamage(float r, float g, float b)
     {
-        var dataReader = new NetDataReader();
-        dataReader.SetSource(data);
-        var sender = dataReader.GetInt();
-
-        float r = float.Parse(dataReader.GetString());
-        float g = float.Parse(dataReader.GetString());
-        float b = float.Parse(dataReader.GetString());
 
         Color newColor = new Color(r, g, b, 1.0f);
         GetComponent<Renderer>().material.color = newColor;

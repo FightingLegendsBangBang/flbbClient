@@ -35,7 +35,7 @@ public abstract class INetworkObject : MonoBehaviour
     {
         if (!nwm.NetworkObjects.ContainsKey(objectId))
             return;
-        
+
         if (!owner)
         {
             transform.position = interpolatePosition
@@ -61,7 +61,7 @@ public abstract class INetworkObject : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public void SendRPC(string rpcName, int sender, rpcTarget target, params string[] args)
+    public void SendRPC(string rpcName, int sender, rpcTarget target, params object[] args)
     {
         NetDataWriter writer = new NetDataWriter();
         writer.Put((ushort) 201);
@@ -71,7 +71,18 @@ public abstract class INetworkObject : MonoBehaviour
         writer.Put(sender);
         foreach (var o in args)
         {
-            writer.Put(o);
+            switch (o)
+            {
+                case int i:
+                    writer.Put(i);
+                    break;
+                case string s:
+                    writer.Put(s);
+                    break;
+                case float f:
+                    writer.Put(f);
+                    break;
+            }
         }
 
         nwm.Send(writer, DeliveryMethod.ReliableUnordered);
