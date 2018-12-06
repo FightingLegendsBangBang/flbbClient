@@ -39,9 +39,8 @@ public class TestPlayerController : INetworkObject
     }
 
     [NetRPC]
-    public void RPC_TakeDamage(float r, float g, float b)
+    public void RPC_TakeDamage(int sender, float r, float g, float b)
     {
-
         Color newColor = new Color(r, g, b, 1.0f);
         GetComponent<Renderer>().material.color = newColor;
     }

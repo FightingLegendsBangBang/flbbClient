@@ -159,7 +159,7 @@ public class NetworkManager : MonoBehaviour
             }
 
             client.PollEvents();
-            Thread.Sleep(20);
+            Thread.Sleep(16);
         }
 
         client.Stop();
