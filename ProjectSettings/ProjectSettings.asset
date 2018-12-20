@@ -283,7 +283,7 @@ PlayerSettings:
     m_APIs: 0b000000
     m_Automatic: 1
   - m_BuildTarget: LinuxStandaloneSupport
-    m_APIs: 15000000
+    m_APIs: 1100000015000000
     m_Automatic: 0
   - m_BuildTarget: WindowsStandaloneSupport
     m_APIs: 15000000
@@ -602,6 +602,8 @@ PlayerSettings:
       daydreamIconForeground: {fileID: 0}
       daydreamIconBackground: {fileID: 0}
   cloudServicesEnabled:
+    Build: 1
+    Collab: 0
     UNet: 1
   luminIcon:
     m_Name: 
@@ -624,8 +626,8 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   cloudProjectId: 33e2cf1a-a64a-4e0a-9e4f-85fbc6166810
   framebufferDepthMemorylessMode: 0
-  projectName: Test-Project
-  organizationId: unity_i4ifns_gag15cg
+  projectName: flbbClient
+  organizationId: fighting-legends-inc
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
